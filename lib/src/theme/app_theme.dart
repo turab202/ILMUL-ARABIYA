@@ -1,5 +1,5 @@
+// lib/src/theme/app_theme.dart
 import 'package:flutter/material.dart';
-
 import 'app_colors.dart';
 
 class AppTheme {
@@ -13,10 +13,10 @@ class AppTheme {
       onSecondary: AppColors.textLight,
       error: Colors.redAccent,
       onError: Colors.white,
+      surface: AppColors.card,
+      onSurface: AppColors.textDark,
       background: AppColors.background,
       onBackground: AppColors.textDark,
-      surface: Colors.white,
-      onSurface: AppColors.textDark,
     ),
     scaffoldBackgroundColor: AppColors.background,
     appBarTheme: const AppBarTheme(
@@ -26,10 +26,11 @@ class AppTheme {
       elevation: 0,
       centerTitle: true,
     ),
-    cardTheme: CardTheme(
+    // FIXED: Changed CardTheme to CardThemeData
+    cardTheme: const CardThemeData(
       color: AppColors.card,
       elevation: 0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(24))),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -70,7 +71,9 @@ class AppTheme {
         color: AppColors.textDark,
       ),
     ),
-    drawerTheme: const DrawerThemeData(backgroundColor: AppColors.background),
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: AppColors.background,
+    ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: AppColors.card,
       selectedItemColor: AppColors.darkGreen,

@@ -7,8 +7,9 @@ import '../widgets/mini_player.dart';
 
 class MainShell extends StatelessWidget {
   final Widget child;
+  final String currentLocation;
 
-  const MainShell({super.key, required this.child});
+  const MainShell({super.key, required this.child, required this.currentLocation});
 
   int _indexFromLocation(String location) {
     if (location.startsWith('/search')) return 1;
@@ -20,8 +21,7 @@ class MainShell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final location = GoRouter.of(context).location;
-    final currentIndex = _indexFromLocation(location);
+    final currentIndex = _indexFromLocation(currentLocation);
 
     return Scaffold(
       backgroundColor: AppColors.background,

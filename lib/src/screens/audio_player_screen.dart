@@ -1,5 +1,4 @@
-import 'package:audio_service/audio_service.dart';
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../providers/audio_provider.dart';
@@ -28,12 +27,18 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
         child: currentItemAsync.when(
           data: (item) {
             if (item == null) {
-              return const Center(child: Text('የሙዚቃ እቃ አልተወሰነም', style: TextStyle(color: AppColors.textDark)));
+              return const Center(
+                child: Text(
+                  'የሙዚቃ እቃ አልተወሰነም',
+                  style: TextStyle(color: AppColors.textDark),
+                ),
+              );
             }
+
             final state = playbackStateAsync.value;
             final position = state?.updatePosition ?? Duration.zero;
             final duration = item.duration ?? const Duration(minutes: 1);
-            final effectivePosition = _sliderPosition.clamp(0, duration.inMilliseconds.toDouble());
+            final displayPosition = position.inMilliseconds.clamp(0, duration.inMilliseconds).toDouble();
 
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -48,7 +53,10 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
                         icon: const Icon(Icons.arrow_back_ios_new, color: AppColors.darkGreen),
                         onPressed: () => Navigator.pop(context),
                       ),
-                      const Text('ኦዲዮ ተጫዋች', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.textDark)),
+                      const Text(
+                        'ኦዲዮ ተጫዋች',
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.textDark),
+                      ),
                       const SizedBox(width: 40),
                     ],
                   ),
@@ -65,9 +73,15 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
                     ),
                   ),
                   const SizedBox(height: 28),
-                  Text(item.title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800, color: AppColors.textDark)),
+                  Text(
+                    item.title,
+                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800, color: AppColors.textDark),
+                  ),
                   const SizedBox(height: 8),
-                  Text(item.artist ?? '', style: const TextStyle(fontSize: 16, color: AppColors.muted)),
+                  Text(
+                    item.artist ?? '',
+                    style: const TextStyle(fontSize: 16, color: AppColors.muted),
+                  ),
                   const SizedBox(height: 24),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,7 +89,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
                       Slider(
                         min: 0,
                         max: duration.inMilliseconds.toDouble(),
-                        value: state != null ? position.inMilliseconds.clamp(0, duration.inMilliseconds).toDouble() : 0,
+                        value: displayPosition,
                         onChanged: (value) {
                           setState(() => _sliderPosition = value);
                         },
@@ -90,7 +104,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(_formatDuration(state?.updatePosition ?? Duration.zero), style: const TextStyle(color: AppColors.muted)),
+                            Text(_formatDuration(position), style: const TextStyle(color: AppColors.muted)),
                             Text(_formatDuration(duration), style: const TextStyle(color: AppColors.muted)),
                           ],
                         ),
@@ -109,7 +123,10 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('ፕሌይቶን ፕሮግራም', style: TextStyle(color: AppColors.darkGreen, fontWeight: FontWeight.w700)),
+                        Text(
+                          'ፕሌይቶን ፕሮግራም',
+                          style: TextStyle(color: AppColors.darkGreen, fontWeight: FontWeight.w700),
+                        ),
                         Text('${playbackSpeed.toStringAsFixed(1)}x', style: const TextStyle(color: AppColors.muted)),
                       ],
                     ),
@@ -120,7 +137,8 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
             );
           },
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (_, __) => const Center(child: Text('እባክዎ እንደገና ይሞክሩ')), 
+          error: (_, __) => const Center(child: Text('እባክዎ እንደገና ይሞክሩ')),
+        ),
       ),
     );
   }

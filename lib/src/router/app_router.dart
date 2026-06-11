@@ -23,7 +23,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const SplashScreen(),
       ),
       ShellRoute(
-        builder: (context, state, child) => MainShell(child: child),
+        builder: (context, state, child) => MainShell(child: child, currentLocation: state.matchedLocation),
         routes: [
           GoRoute(
             path: '/home',
