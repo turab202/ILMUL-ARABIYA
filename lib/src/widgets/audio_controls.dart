@@ -28,7 +28,10 @@ class AudioControls extends ConsumerWidget {
             ),
             IconButton(
               iconSize: 56,
-              icon: Icon(isPlaying ? Icons.pause_circle_filled : Icons.play_circle_fill, color: AppColors.gold),
+              icon: Icon(
+                isPlaying ? Icons.pause_circle_filled : Icons.play_circle_fill,
+                color: AppColors.gold,
+              ),
               onPressed: isPlaying ? audioHandler.pause : audioHandler.play,
             ),
             IconButton(
@@ -46,7 +49,8 @@ class AudioControls extends ConsumerWidget {
               context,
               label: 'Repeat',
               active: repeatEnabled,
-              onTap: () => ref.read(repeatModeProvider.notifier).state = !repeatEnabled,
+              onTap: () =>
+                  ref.read(repeatModeProvider.notifier).state = !repeatEnabled,
             ),
             _buildToggle(
               context,
@@ -60,7 +64,12 @@ class AudioControls extends ConsumerWidget {
     );
   }
 
-  Widget _buildToggle(BuildContext context, {required String label, required bool active, required VoidCallback onTap}) {
+  Widget _buildToggle(
+    BuildContext context, {
+    required String label,
+    required bool active,
+    required VoidCallback onTap,
+  }) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -69,7 +78,13 @@ class AudioControls extends ConsumerWidget {
           color: active ? AppColors.darkGreen : AppColors.card,
           borderRadius: BorderRadius.circular(18),
         ),
-        child: Text(label, style: TextStyle(color: active ? AppColors.textLight : AppColors.textDark, fontWeight: FontWeight.w700)),
+        child: Text(
+          label,
+          style: TextStyle(
+            color: active ? AppColors.textLight : AppColors.textDark,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
       ),
     );
   }

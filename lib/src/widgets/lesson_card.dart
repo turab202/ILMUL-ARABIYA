@@ -7,11 +7,7 @@ class LessonCard extends StatelessWidget {
   final Lesson lesson;
   final VoidCallback? onTap;
 
-  const LessonCard({
-    super.key,
-    required this.lesson,
-    this.onTap,
-  });
+  const LessonCard({super.key, required this.lesson, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +30,11 @@ class LessonCard extends StatelessWidget {
                 child: Center(
                   child: Text(
                     lesson.category.substring(0, 1),
-                    style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w700, color: AppColors.darkGreen),
+                    style: const TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.darkGreen,
+                    ),
                   ),
                 ),
               ),
@@ -43,21 +43,38 @@ class LessonCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(lesson.title, style: Theme.of(context).textTheme.titleLarge),
+                    Text(
+                      lesson.title,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
                     const SizedBox(height: 6),
-                    Text(lesson.description, style: Theme.of(context).textTheme.bodyMedium),
+                    Text(
+                      lesson.description,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
                     const SizedBox(height: 12),
                     Row(
                       children: [
                         Chip(
-                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                          label: Text(lesson.duration, style: const TextStyle(fontWeight: FontWeight.w600)),
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 4,
+                          ),
+                          label: Text(
+                            lesson.duration,
+                            style: const TextStyle(fontWeight: FontWeight.w600),
+                          ),
                           backgroundColor: AppColors.background,
                         ),
                         const Spacer(),
                         if (lesson.isLocked)
-                          const Icon(Icons.lock_outline, color: AppColors.muted, size: 18),
+                          const Icon(
+                            Icons.lock_outline,
+                            color: AppColors.muted,
+                            size: 18,
+                          ),
                       ],
                     ),
                   ],

@@ -11,7 +11,10 @@ class FavoritesScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final favorites = ref.watch(lessonsProvider).where((lesson) => lesson.isFavorite).toList();
+    final favorites = ref
+        .watch(lessonsProvider)
+        .where((lesson) => lesson.isFavorite)
+        .toList();
 
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(vertical: 20),
@@ -20,14 +23,24 @@ class FavoritesScreen extends ConsumerWidget {
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text('ተወዳጆች', style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700, color: AppColors.textDark)),
+            child: Text(
+              'ተወዳጆች',
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.w700,
+                color: AppColors.textDark,
+              ),
+            ),
           ),
           const SizedBox(height: 8),
           const SectionHeader(title: 'እነዚህ የተመረጡ ትምህርቶች ናቸው'),
           if (favorites.isEmpty)
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-              child: Text('ከዚህ በላይ የሚወዳዱ ትምህርቶች የሉም', style: TextStyle(color: AppColors.muted)),
+              child: Text(
+                'ከዚህ በላይ የሚወዳዱ ትምህርቶች የሉም',
+                style: TextStyle(color: AppColors.muted),
+              ),
             )
           else
             ...favorites.map((lesson) => LessonCard(lesson: lesson)),

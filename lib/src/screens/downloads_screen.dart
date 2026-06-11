@@ -10,7 +10,10 @@ class DownloadsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final downloads = ref.watch(lessonsProvider).where((lesson) => lesson.isDownloaded).toList();
+    final downloads = ref
+        .watch(lessonsProvider)
+        .where((lesson) => lesson.isDownloaded)
+        .toList();
 
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(vertical: 20),
@@ -19,13 +22,23 @@ class DownloadsScreen extends ConsumerWidget {
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text('የውስጣዊ ውስን', style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700, color: AppColors.textDark)),
+            child: Text(
+              'የውስጣዊ ውስን',
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.w700,
+                color: AppColors.textDark,
+              ),
+            ),
           ),
           const SizedBox(height: 8),
           if (downloads.isEmpty)
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-              child: Text('ፋይሎች አልተያዙም', style: TextStyle(color: AppColors.muted)),
+              child: Text(
+                'ፋይሎች አልተያዙም',
+                style: TextStyle(color: AppColors.muted),
+              ),
             )
           else
             ...downloads.map((lesson) => LessonCard(lesson: lesson)),

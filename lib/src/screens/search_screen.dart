@@ -23,7 +23,9 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
     final lessons = ref.watch(lessonsProvider);
     final results = lessons.where((lesson) {
       final lower = query.toLowerCase();
-      return lesson.title.toLowerCase().contains(lower) || lesson.description.toLowerCase().contains(lower) || lesson.category.toLowerCase().contains(lower);
+      return lesson.title.toLowerCase().contains(lower) ||
+          lesson.description.toLowerCase().contains(lower) ||
+          lesson.category.toLowerCase().contains(lower);
     }).toList();
 
     return SingleChildScrollView(
@@ -33,7 +35,14 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text('ፈልግ', style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700, color: AppColors.textDark)),
+            child: Text(
+              'ፈልግ',
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.w700,
+                color: AppColors.textDark,
+              ),
+            ),
           ),
           const SizedBox(height: 12),
           Padding(
@@ -47,7 +56,10 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           if (results.isEmpty)
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-              child: Text('ከዚህ በላይ ምንም አልተገኘም', style: TextStyle(color: AppColors.muted)),
+              child: Text(
+                'ከዚህ በላይ ምንም አልተገኘም',
+                style: TextStyle(color: AppColors.muted),
+              ),
             )
           else
             ...results.map((lesson) => LessonCard(lesson: lesson)),

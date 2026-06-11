@@ -26,8 +26,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final categories = ref.watch(categoriesProvider);
     final lessons = ref.watch(lessonsProvider);
     final filteredLessons = lessons.where((lesson) {
-      final matchesCategory = selectedCategory == 'ምርጫ' || lesson.category == selectedCategory;
-      final matchesSearch = lesson.title.contains(searchTerm) || lesson.description.contains(searchTerm);
+      final matchesCategory =
+          selectedCategory == 'ምርጫ' || lesson.category == selectedCategory;
+      final matchesSearch =
+          lesson.title.contains(searchTerm) ||
+          lesson.description.contains(searchTerm);
       return matchesCategory && (searchTerm.isEmpty || matchesSearch);
     }).toList();
 
@@ -45,9 +48,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('እንኳን ደህና መጣህ', style: TextStyle(color: AppColors.textLight, fontSize: 20, fontWeight: FontWeight.w700)),
+                const Text(
+                  'እንኳን ደህና መጣህ',
+                  style: TextStyle(
+                    color: AppColors.textLight,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
                 const SizedBox(height: 8),
-                const Text('ዛሬ የሚመከሩ ሳርፍ ትምህርቶችን ይምረጡ', style: TextStyle(color: AppColors.textLight, fontSize: 14)),
+                const Text(
+                  'ዛሬ የሚመከሩ ሳርፍ ትምህርቶችን ይምረጡ',
+                  style: TextStyle(color: AppColors.textLight, fontSize: 14),
+                ),
                 const SizedBox(height: 24),
                 SearchInput(
                   hintText: 'የሚፈልጉትን ጽሑፍ ያስገቡ',
@@ -74,11 +87,17 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             ),
           ),
-          const SectionHeader(title: 'ዝርዝር ሳርፍ ትምህርቶች', actionLabel: 'ሁሉን እይ', onAction: null),
-          ...filteredLessons.map((lesson) => LessonCard(
-                lesson: lesson,
-                onTap: () => context.push('/lessons'),
-              )),
+          const SectionHeader(
+            title: 'ዝርዝር ሳርፍ ትምህርቶች',
+            actionLabel: 'ሁሉን እይ',
+            onAction: null,
+          ),
+          ...filteredLessons.map(
+            (lesson) => LessonCard(
+              lesson: lesson,
+              onTap: () => context.push('/lessons'),
+            ),
+          ),
           const SizedBox(height: 100),
         ],
       ),

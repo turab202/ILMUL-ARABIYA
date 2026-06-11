@@ -6,19 +6,21 @@ class SearchInput extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final String hintText;
 
-  const SearchInput({
-    super.key,
-    this.onChanged,
-    this.hintText = 'ፈልግ...',
-  });
+  const SearchInput({super.key, this.onChanged, this.hintText = 'ፈልግ...'});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       onChanged: onChanged,
-      style: const TextStyle(color: AppColors.textDark, fontWeight: FontWeight.w500),
+      style: const TextStyle(
+        color: AppColors.textDark,
+        fontWeight: FontWeight.w500,
+      ),
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 16,
+        ),
         hintText: hintText,
         prefixIcon: const Icon(Icons.search, color: AppColors.darkGreen),
         filled: true,

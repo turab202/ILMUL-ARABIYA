@@ -28,7 +28,10 @@ class CategoryChip extends StatelessWidget {
           color: backgroundColor,
           borderRadius: BorderRadius.circular(18),
         ),
-        child: Text(label, style: TextStyle(color: foregroundColor, fontWeight: FontWeight.w600)),
+        child: Text(
+          label,
+          style: TextStyle(color: foregroundColor, fontWeight: FontWeight.w600),
+        ),
       ),
     );
   }

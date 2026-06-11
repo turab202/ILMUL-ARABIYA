@@ -39,12 +39,36 @@ class AppTheme {
       ),
     ),
     textTheme: const TextTheme(
-      displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.w700, color: AppColors.textDark),
-      headlineMedium: TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: AppColors.textDark),
-      titleLarge: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.textDark),
-      bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: AppColors.textDark),
-      bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: AppColors.textDark),
-      labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.textDark),
+      displayLarge: TextStyle(
+        fontSize: 32,
+        fontWeight: FontWeight.w700,
+        color: AppColors.textDark,
+      ),
+      headlineMedium: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.w700,
+        color: AppColors.textDark,
+      ),
+      titleLarge: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
+        color: AppColors.textDark,
+      ),
+      bodyLarge: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        color: AppColors.textDark,
+      ),
+      bodyMedium: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        color: AppColors.textDark,
+      ),
+      labelLarge: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+        color: AppColors.textDark,
+      ),
     ),
     drawerTheme: const DrawerThemeData(backgroundColor: AppColors.background),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(

@@ -42,21 +42,24 @@ const audioTracks = [
     title: 'እምነት ትምህርት',
     subtitle: 'በኡስታዝ አቡ ኢምራን',
     url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-    artwork: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80',
+    artwork:
+        'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80',
     duration: Duration(minutes: 4, seconds: 16),
   ),
   AudioTrack(
     title: 'እንደ ማስታወሻ',
     subtitle: 'የምስራቅ አርእስት',
     url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-    artwork: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
+    artwork:
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
     duration: Duration(minutes: 5, seconds: 4),
   ),
   AudioTrack(
     title: 'ግንዛቤ ሙዚቃ',
     subtitle: 'የሰርፍ ማዕከላዊ',
     url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-    artwork: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=400&q=80',
+    artwork:
+        'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=400&q=80',
     duration: Duration(minutes: 3, seconds: 58),
   ),
 ];

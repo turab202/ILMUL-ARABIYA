@@ -30,14 +30,31 @@ class _SplashScreenState extends State<SplashScreen> {
             CircleAvatar(
               radius: 72,
               backgroundColor: AppColors.gold,
-              child: Icon(Icons.menu_book_rounded, color: AppColors.darkGreen, size: 64),
+              child: Icon(
+                Icons.menu_book_rounded,
+                color: AppColors.darkGreen,
+                size: 64,
+              ),
             ),
             SizedBox(height: 24),
-            Text('እልሙል አረቢያ', style: TextStyle(color: AppColors.textLight, fontSize: 28, fontWeight: FontWeight.w800)),
+            Text(
+              'እልሙል አረቢያ',
+              style: TextStyle(
+                color: AppColors.textLight,
+                fontSize: 28,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
             SizedBox(height: 12),
-            Text('የሳርፍ ትምህርቶች እና የኦዲዮ ትዕዛዝ',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: AppColors.textLight, fontSize: 14, height: 1.5)),
+            Text(
+              'የሳርፍ ትምህርቶች እና የኦዲዮ ትዕዛዝ',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: AppColors.textLight,
+                fontSize: 14,
+                height: 1.5,
+              ),
+            ),
           ],
         ),
       ),

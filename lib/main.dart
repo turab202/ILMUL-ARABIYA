@@ -18,5 +18,10 @@ Future<void> main() async {
     ),
   );
 
-  runApp(ProviderScope(overrides: [audioHandlerProvider.overrideWithValue(audioHandler)], child: const IlmulArabiyaApp()));
+  runApp(
+    ProviderScope(
+      overrides: [audioHandlerProvider.overrideWithValue(audioHandler)],
+      child: const IlmulArabiyaApp(),
+    ),
+  );
 }

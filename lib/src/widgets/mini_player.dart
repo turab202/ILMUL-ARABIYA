@@ -18,7 +18,10 @@ class MiniPlayer extends ConsumerWidget {
         if (mediaItem == null) {
           return const SizedBox.shrink();
         }
-        final playing = playbackStateAsync.maybeWhen(data: (state) => state.playing, orElse: () => false);
+        final playing = playbackStateAsync.maybeWhen(
+          data: (state) => state.playing,
+          orElse: () => false,
+        );
         return GestureDetector(
           onTap: () => context.push('/audio-player'),
           child: Container(
@@ -37,16 +40,31 @@ class MiniPlayer extends ConsumerWidget {
                     color: AppColors.gold,
                     borderRadius: BorderRadius.circular(14),
                   ),
-                  child: const Icon(Icons.headphones, color: AppColors.darkGreen),
+                  child: const Icon(
+                    Icons.headphones,
+                    color: AppColors.darkGreen,
+                  ),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(mediaItem.title, style: const TextStyle(color: AppColors.textLight, fontWeight: FontWeight.w700)),
+                      Text(
+                        mediaItem.title,
+                        style: const TextStyle(
+                          color: AppColors.textLight,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                       const SizedBox(height: 4),
-                      Text(mediaItem.artist ?? '', style: const TextStyle(color: AppColors.textLight, fontSize: 12)),
+                      Text(
+                        mediaItem.artist ?? '',
+                        style: const TextStyle(
+                          color: AppColors.textLight,
+                          fontSize: 12,
+                        ),
+                      ),
                     ],
                   ),
                 ),

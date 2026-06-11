@@ -19,11 +19,29 @@ class AppDrawer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  CircleAvatar(radius: 28, backgroundColor: AppColors.gold, child: Icon(Icons.person, color: AppColors.darkGreen, size: 30)),
+                  CircleAvatar(
+                    radius: 28,
+                    backgroundColor: AppColors.gold,
+                    child: Icon(
+                      Icons.person,
+                      color: AppColors.darkGreen,
+                      size: 30,
+                    ),
+                  ),
                   SizedBox(height: 14),
-                  Text('Ustaz Abu Imran', style: TextStyle(color: AppColors.textLight, fontSize: 18, fontWeight: FontWeight.w700)),
+                  Text(
+                    'Ustaz Abu Imran',
+                    style: TextStyle(
+                      color: AppColors.textLight,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
                   SizedBox(height: 4),
-                  Text('Imul Arebiya Academy', style: TextStyle(color: AppColors.textLight, fontSize: 13)),
+                  Text(
+                    'Imul Arebiya Academy',
+                    style: TextStyle(color: AppColors.textLight, fontSize: 13),
+                  ),
                 ],
               ),
             ),
@@ -41,7 +59,12 @@ class AppDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildItem(BuildContext context, IconData icon, String title, String path) {
+  Widget _buildItem(
+    BuildContext context,
+    IconData icon,
+    String title,
+    String path,
+  ) {
     return ListTile(
       leading: Icon(icon, color: AppColors.darkGreen),
       title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),

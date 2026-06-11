@@ -68,6 +68,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const ComingSoonScreen(),
       ),
     ],
-    errorBuilder: (context, state) => const Scaffold(body: Center(child: Text('የገቢ ገጽ አልተገኘም'))),
+    errorBuilder: (context, state) =>
+        const Scaffold(body: Center(child: Text('የገቢ ገጽ አልተገኘም'))),
   );
 });

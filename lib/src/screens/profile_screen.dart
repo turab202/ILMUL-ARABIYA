@@ -14,25 +14,55 @@ class ProfileScreen extends StatelessWidget {
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text('መለያ', style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700, color: AppColors.textDark)),
+            child: Text(
+              'መለያ',
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.w700,
+                color: AppColors.textDark,
+              ),
+            ),
           ),
           const SizedBox(height: 24),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
-                    CircleAvatar(radius: 36, backgroundColor: AppColors.secondaryGreen, child: Icon(Icons.person, color: AppColors.textLight, size: 30)),
+                    CircleAvatar(
+                      radius: 36,
+                      backgroundColor: AppColors.secondaryGreen,
+                      child: Icon(
+                        Icons.person,
+                        color: AppColors.textLight,
+                        size: 30,
+                      ),
+                    ),
                     SizedBox(height: 16),
-                    Text('Ustaz Abu Imran', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.textDark)),
+                    Text(
+                      'Ustaz Abu Imran',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.textDark,
+                      ),
+                    ),
                     SizedBox(height: 8),
-                    Text('User ID: 012345', style: TextStyle(color: AppColors.muted)),
+                    Text(
+                      'User ID: 012345',
+                      style: TextStyle(color: AppColors.muted),
+                    ),
                     SizedBox(height: 18),
-                    Text('የእልሙል ተጠቃሚ፣ በቀላሉ የኦዲዮ ትምህርቶችን ይሰሙ።', style: TextStyle(color: AppColors.textDark, height: 1.5)),
+                    Text(
+                      'የእልሙል ተጠቃሚ፣ በቀላሉ የኦዲዮ ትምህርቶችን ይሰሙ።',
+                      style: TextStyle(color: AppColors.textDark, height: 1.5),
+                    ),
                   ],
                 ),
               ),

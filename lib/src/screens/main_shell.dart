@@ -59,11 +59,26 @@ class MainShell extends StatelessWidget {
                 }
               },
               items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'መነሻ'),
-                BottomNavigationBarItem(icon: Icon(Icons.search_outlined), label: 'ፈሊግ'),
-                BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: 'ተወዳጆች'),
-                BottomNavigationBarItem(icon: Icon(Icons.download_outlined), label: 'እድል'),
-                BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'መለያ'),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home_outlined),
+                  label: 'መነሻ',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.search_outlined),
+                  label: 'ፈሊግ',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.favorite_border),
+                  label: 'ተወዳጆች',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.download_outlined),
+                  label: 'እድል',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person_outline),
+                  label: 'መለያ',
+                ),
               ],
             ),
           ],

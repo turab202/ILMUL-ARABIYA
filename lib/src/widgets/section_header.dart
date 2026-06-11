@@ -23,7 +23,10 @@ class SectionHeader extends StatelessWidget {
           if (actionLabel.isNotEmpty)
             TextButton(
               onPressed: onAction,
-              child: Text(actionLabel, style: TextStyle(color: Theme.of(context).colorScheme.primary)),
+              child: Text(
+                actionLabel,
+                style: TextStyle(color: Theme.of(context).colorScheme.primary),
+              ),
             ),
         ],
       ),

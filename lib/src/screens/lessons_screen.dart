@@ -22,10 +22,21 @@ class LessonsScreen extends ConsumerWidget {
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text('ሳርፍ ትምህርቶች', style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700, color: AppColors.textDark)),
+            child: Text(
+              'ሳርፍ ትምህርቶች',
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.w700,
+                color: AppColors.textDark,
+              ),
+            ),
           ),
           const SizedBox(height: 16),
-          const SectionHeader(title: 'ተወዳጅ ሳርፍ ስርዓቶች', actionLabel: 'ሁሉን ሌላ', onAction: null),
+          const SectionHeader(
+            title: 'ተወዳጅ ሳርፍ ስርዓቶች',
+            actionLabel: 'ሁሉን ሌላ',
+            onAction: null,
+          ),
           ...unlocked.map((lesson) => LessonCard(lesson: lesson)),
           const SectionHeader(title: 'የተዘገየ ሳርፍ', actionLabel: ''),
           ...locked.map((lesson) => LessonCard(lesson: lesson)),

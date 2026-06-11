@@ -8,16 +8,19 @@ class AppAudioHandler extends BaseAudioHandler with QueueHandler, SeekHandler {
   final AudioPlayer _player = AudioPlayer();
   final List<MediaItem> _mediaItems;
 
-  AppAudioHandler() : _mediaItems = audioTracks
-      .map((track) => MediaItem(
-            id: track.url,
-            album: 'እልሙል አረቢያ',
-            title: track.title,
-            artist: track.subtitle,
-            duration: track.duration,
-            artUri: Uri.parse(track.artwork),
-          ))
-      .toList() {
+  AppAudioHandler()
+    : _mediaItems = audioTracks
+          .map(
+            (track) => MediaItem(
+              id: track.url,
+              album: 'እልሙል አረቢያ',
+              title: track.title,
+              artist: track.subtitle,
+              duration: track.duration,
+              artUri: Uri.parse(track.artwork),
+            ),
+          )
+          .toList() {
     _init();
   }
 
